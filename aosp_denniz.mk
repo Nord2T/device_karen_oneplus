@@ -25,8 +25,8 @@ $(call inherit-product, device/oneplus/denniz/device.mk)
 $(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := lineage_karen
-PRODUCT_DEVICE := karen
+PRODUCT_NAME := aosp_denniz
+PRODUCT_DEVICE := denniz
 PRODUCT_BRAND := OnePlus
 PRODUCT_MODEL := CPH2401
 PRODUCT_MANUFACTURER := OnePlus
