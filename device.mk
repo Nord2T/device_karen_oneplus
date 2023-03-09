@@ -34,16 +34,16 @@ PRODUCT_SHIPPING_API_LEVEL := 30
 $(call inherit-product-if-exists, vendor/oneplus/denniz/denniz-vendor.mk)
 $(call inherit-product-if-exists, vendor/mediatek/ims/mtk-ims.mk)
 
-# OPlusExtras
-PRODUCT_PACKAGES += OPlusExtras
+# OneplusParts
+$(call inherit-product, packages/apps/OneplusParts/parts.mk)
 
 # Dynamic Partition
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 PRODUCT_BUILD_SUPER_PARTITION := false
 
 # Alert slider
-#PRODUCT_PACKAGES += \
-#    alert-slider_daemon
+PRODUCT_PACKAGES += \
+    alert-slider_daemon
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2400
@@ -61,17 +61,12 @@ PRODUCT_COPY_FILES += \
     device/oneplus/denniz/bluetooth/audio/config/sysbta_audio_policy_configuration.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysbta_audio_policy_configuration.xml \
     device/oneplus/denniz/bluetooth/audio/config/sysbta_audio_policy_configuration_7_0.xml:$(TARGET_COPY_OUTY_SYSTEM)/etc/sysbta_audio_policy_configuration_7_0.xml
 
-# CameraGo V4
+# CameraGo	
 PRODUCT_PACKAGES += \
-    GCamGOPrebuilt-V4
-    
-# OnePlus File Manager & Gallery
-PRODUCT_PACKAGES += \
-    OPFiles \
-    OPGallery
-    
+    CameraGo
+
 PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/configs/permissions/privapp-permissions-op-files.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-op-files.xml
+    $(DEVICE_PATH)/configs/permissions/privapp-permissions-camera-go.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-camera-go.xml
 
 # Carrier Config Overlays
 PRODUCT_PACKAGES += \
@@ -96,7 +91,7 @@ PRODUCT_COPY_FILES += \
 # Fingerprint
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.3-service.denniz \
-    vendor.oplus.hardware.biometrics.fingerprint@2.1
+	vendor.oplus.hardware.biometrics.fingerprint@2.1
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.fingerprint.xml
@@ -118,7 +113,8 @@ PRODUCT_PACKAGES += \
 # Init
 PRODUCT_PACKAGES += \
     init.mt6893.rc \
-    init.oplus_extras.rc
+    init.oneplusparts.rc \
+    init.oneplusparts.sh
 
 # NFC
 PRODUCT_PACKAGES += \
@@ -154,7 +150,7 @@ PRODUCT_PACKAGES += \
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(DEVICE_PATH)/overlay \
-    $(DEVICE_PATH)/overlay-evolution
+    $(DEVICE_PATH)/overlay-aosp
 
 # MTK IMS Overlays
 PRODUCT_PACKAGES += \
@@ -211,7 +207,3 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     TetheringConfigOverlay \
     WifiOverlay
-    
-# Device Personalization Services
-PRODUCT_PACKAGES += \
-    MatchmakerPrebuilt
