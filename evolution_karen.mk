@@ -19,16 +19,16 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit from device makefile
-$(call inherit-product, device/oneplus/denniz/device.mk)
+$(call inherit-product, device/oneplus/karen/device.mk)
 
 # Inherit some common Evolution X stuff.
 $(call inherit-product, vendor/evolution/config/common_full_phone.mk)
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := evolution_denniz
-PRODUCT_DEVICE := denniz
+PRODUCT_NAME := evolution_karen
+PRODUCT_DEVICE := karen
 PRODUCT_BRAND := OnePlus
-PRODUCT_MODEL := DN2101
+PRODUCT_MODEL := CPH2401
 PRODUCT_MANUFACTURER := OnePlus
 
 # Gapps
@@ -40,8 +40,8 @@ PRODUCT_GMS_CLIENTID_BASE := android-oneplus
 
 # Build info
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRODUCT_DEVICE=OP515BL1 \
-    PRODUCT_NAME=DN2101IND \
+    PRODUCT_DEVICE=OP557AL1 \
+    PRODUCT_NAME=CPH2401IND \
     PRIVATE_BUILD_DESC="DN201IND-user 11 RP1A.200720.011 1627567766349 release-keys"
 
-BUILD_FINGERPRINT := OnePlus/DN2101IND/OP515BL1:11/RP1A.200720.011/1627567766349:user/release-keys
+BUILD_FINGERPRINT := OnePlus/CPH2401IND/OP557AL1:11/RP1A.200720.011/1627567766349:user/release-keys

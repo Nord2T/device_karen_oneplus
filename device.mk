@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-DEVICE_PATH := device/oneplus/denniz
+DEVICE_PATH := device/oneplus/karen
 
 # Installs gsi keys into ramdisk, to boot a developer GSI with verified boot.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/developer_gsi_keys.mk)
@@ -31,7 +31,7 @@ PRODUCT_EXTRA_VNDK_VERSIONS := 30
 PRODUCT_SHIPPING_API_LEVEL := 30
 
 # Call proprietary blob setup
-$(call inherit-product-if-exists, vendor/oneplus/denniz/denniz-vendor.mk)
+$(call inherit-product-if-exists, vendor/oneplus/karen/karen-vendor.mk)
 $(call inherit-product-if-exists, vendor/mediatek/ims/mtk-ims.mk)
 
 # OPlusExtras
@@ -50,7 +50,7 @@ TARGET_SCREEN_HEIGHT := 2400
 TARGET_SCREEN_WIDTH := 1080
 
 # Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/oneplus/denniz/bluetooth/include
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/oneplus/karen/bluetooth/include
 
 # Bluetooth Audio (System-side HAL, sysbta)
 PRODUCT_PACKAGES += \
@@ -58,8 +58,8 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth.audio-service-system
 
 PRODUCT_COPY_FILES += \
-    device/oneplus/denniz/bluetooth/audio/config/sysbta_audio_policy_configuration.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysbta_audio_policy_configuration.xml \
-    device/oneplus/denniz/bluetooth/audio/config/sysbta_audio_policy_configuration_7_0.xml:$(TARGET_COPY_OUTY_SYSTEM)/etc/sysbta_audio_policy_configuration_7_0.xml
+    device/oneplus/karen/bluetooth/audio/config/sysbta_audio_policy_configuration.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysbta_audio_policy_configuration.xml \
+    device/oneplus/karen/bluetooth/audio/config/sysbta_audio_policy_configuration_7_0.xml:$(TARGET_COPY_OUTY_SYSTEM)/etc/sysbta_audio_policy_configuration_7_0.xml
 
 # CameraGo V4
 PRODUCT_PACKAGES += \
@@ -84,7 +84,7 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
 
 # DT2W
 PRODUCT_PACKAGES += \
-    DT2W-Service-denniz
+    DT2W-Service-karen
 
 # fastbootd
 PRODUCT_PACKAGES += \
@@ -95,7 +95,7 @@ PRODUCT_COPY_FILES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.3-service.denniz \
+    android.hardware.biometrics.fingerprint@2.3-service.karen \
     vendor.oplus.hardware.biometrics.fingerprint@2.1
 
 PRODUCT_COPY_FILES += \
@@ -148,7 +148,7 @@ PRODUCT_COPY_FILES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-service.denniz \
+    android.hardware.light@2.0-service.karen \
     android.hardware.sensors@2.0-service.multihal
 
 # Overlays
@@ -193,7 +193,7 @@ PRODUCT_PACKAGES += \
 
 # Touch
 PRODUCT_PACKAGES += \
-    vendor.lineage.touch@1.0-service.denniz
+    vendor.lineage.touch@1.0-service.karen
 
 # Vendor overlay
 PRODUCT_COPY_FILES += \
